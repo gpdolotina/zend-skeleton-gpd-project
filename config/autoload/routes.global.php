@@ -5,6 +5,7 @@ return [
         'invokables' => [
             Zend\Expressive\Router\RouterInterface::class => Zend\Expressive\Router\FastRouteRouter::class,
             App\Action\PingAction::class => App\Action\PingAction::class,
+	    App\Action\HelloAction::class => App\Action\HelloAction::class,
         ],
         'factories' => [
             App\Action\HomePageAction::class => App\Action\HomePageFactory::class,
@@ -22,6 +23,12 @@ return [
             'name' => 'api.ping',
             'path' => '/api/ping',
             'middleware' => App\Action\PingAction::class,
+            'allowed_methods' => ['GET'],
+        ],
+	[
+            'name' => 'hello',
+            'path' => '/hello[/{name}]',
+            'middleware' => App\Action\HelloAction::class,
             'allowed_methods' => ['GET'],
         ],
     ],

@@ -18,7 +18,7 @@ class HelloAction
 	}
 	else
 	{
-        	return new JsonResponse(['message' => 'Hello World!']);
+        	return new JsonResponse(['message' => 'Hello world this is Zend Expressive!']);
 	}
 
     }

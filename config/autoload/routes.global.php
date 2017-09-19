@@ -5,7 +5,7 @@ return [
         'invokables' => [
             Zend\Expressive\Router\RouterInterface::class => Zend\Expressive\Router\FastRouteRouter::class,
             App\Action\PingAction::class => App\Action\PingAction::class,
-	    App\Action\HelloAction::class => App\Action\HelloAction::class,
+	        App\Action\LoginAction::class => App\Action\LoginAction::class,
         ],
         'factories' => [
             App\Action\HomePageAction::class => App\Action\HomePageFactory::class,
@@ -26,10 +26,10 @@ return [
             'allowed_methods' => ['GET'],
         ],
 	[
-            'name' => 'hello',
-            'path' => '/hello[/{name}]',
-            'middleware' => App\Action\HelloAction::class,
-            'allowed_methods' => ['GET'],
+            'name' => 'login',
+            'path' => '/login',
+            'middleware' => App\Action\LoginAction::class,
+            'allowed_methods' => ['GET'],['POST'],
         ],
     ],
 ];
